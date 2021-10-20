@@ -14,7 +14,7 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(minWidth: 0, maxWidth: .infinity,
-                minHeight: 0, maxHeight: .infinity)
+                       minHeight: 0, maxHeight: .infinity)
                 .ignoresSafeArea()
             Group{
                 Group{
@@ -262,7 +262,7 @@ struct ContentView: View {
                     path.addLine(to: CGPoint(x:174, y:140))
                 }.fill(Color(red: 239/255, green: 163/255, blue: 24/255))
                     .offset(x:60, y:240)
-                    
+                
                 //右後腳
                 Path{
                     path in path.move(to: CGPoint(x: 176, y: 131))
@@ -356,7 +356,18 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ZStack{
+            ContentView()
+            
+            Text("他只是隻鴨嘴獸")
+                .bold()
+                .font(.system(size: 40))
+                .offset(x: 0, y: 50)
+            Text("他什麼也不會")
+                .bold()
+                .font(.system(size: 30))
+                .offset(x: 0, y: 90)
+        } 
     }
 }
 
